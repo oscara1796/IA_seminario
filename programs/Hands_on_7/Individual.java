@@ -26,20 +26,43 @@ class Individual{
 
   //Calculate fitness
    public double  calcFitness() {
-     double mse  = 0;
-     double sum_q = 0;
+         double r2;
 
-     for (int i = 0; i < data_set_x.length; ++i)
-     {
-           double p1 = data_set_y[i];
-           double p2 = f.apply(data_set_x[i]);;
-           double err = p1 - p2;
-           sum_q += (err*err) ;
-     }
+        int n = data_set_x.length;
 
-     mse = (double) (sum_q / (double)data_set_x.length);
-     fitness = mse;
+        // first pass
+        double sumx = 0.0, sumy = 0.0;
+        for (int i = 0; i < n; i++) {
+            sumx  += data_set_x[i];
+            sumy  += data_set_y[i];
+        }
+        double xbar = sumx / n;
+        double ybar = sumy / n;
+
+        // second pass: compute summary statistics
+        double yybar = 0.0;
+        for (int i = 0; i < n; i++) {
+            yybar += (data_set_y[i] - ybar) * (data_set_y[i] - ybar);
+        }
+        double slope  = this.betas[1];
+        double intercept = this.betas[0];
+
+        // more statistical analysis
+        double ssr = 0.0;      // regression sum of squares
+        for (int i = 0; i < n; i++) {
+            double fit = slope*data_set_x[i] + intercept;
+            ssr += (data_set_y[i]-fit) * (data_set_y[i]-fit);
+        }
+
+        r2    = 1-(ssr / yybar);
+        if (r2 < 0) {
+          fitness= 0;
+        }else{
+
+          fitness= r2;
+        }
+      // System.out.println(fitness);
+      return r2;
      // System.out.println(fitness);
-     return mse;
    }
 }

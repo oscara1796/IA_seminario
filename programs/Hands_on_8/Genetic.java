@@ -21,14 +21,15 @@ public class Genetic {
   void performAlgo(){
     population.calculateFitness();
     fittest = population.getFittest();
-    System.out.println(fittest.fitness);
-    while( fittest.fitness < 0.97638 ){
+    // System.out.println(fittest.fitness);
+    while( fittest.fitness < 100 ){
       crossover();
       mutation();
       population.calculateFitness();
       fittest = population.getFittest();
-      System.out.println("Generation: " + (this.generationCount++) + " Fittest: " + fittest.fitness);
-      System.out.println(fittest.betas[1] + " " + fittest.betas[0]);
+      this.generationCount++;
+      System.out.println("Generation: " + (this.generationCount) + " Fittest: " + fittest.fitness);
+      System.out.println(fittest.betas[0] + " " + fittest.betas[1]+ " " + fittest.betas[2] + " " + fittest.betas[3]);
     }
   }
 
@@ -52,10 +53,10 @@ public class Genetic {
       for (int i = 0;i < (population.Popsize-elitismCount); i++ ) {
         if ( crossoverRate<(rand.nextInt(10)+1)) {
           selection();
-          newPopulation[i] = new Individual(fittest.betas[0], secondFittest.betas[1]);
+          newPopulation[i] = new Individual(fittest.betas, secondFittest.betas);
           if (((population.Popsize-elitismCount)-2)-i > 2 ) {
             // System.out.println("Generation: " + (this.generationCount++) + " Fittest: " + fittest.fitness);
-            newPopulation[i+1] = new Individual(secondFittest.betas[0], fittest.betas[1] );
+            newPopulation[i+1] = new Individual(secondFittest.betas, fittest.betas );
             i+=1;
           }
         }else{
@@ -66,7 +67,6 @@ public class Genetic {
       newPopulation[population.Popsize-2] = fittest;
       newPopulation[population.Popsize-1] = fittest;
       population.setOffSpring(newPopulation);
-
     }
 
     void mutation(){
@@ -74,8 +74,8 @@ public class Genetic {
 
       for (int i = 0;i < sizeToMutate ; i++) {
         int x = rand.nextInt(population.Popsize);
-        population.individuals[x].betas[0] = population.individuals[i].betas[0] + rand.nextInt(50+50)-50;
-        population.individuals[x].betas[1] = population.individuals[i].betas[1] + rand.nextInt(20+20)-20;
+        population.individuals[x].betas[rand.nextInt(4)] = population.individuals[i].betas[rand.nextInt(4)] + rand.nextInt(5);
+        population.individuals[x].betas[rand.nextInt(4)] = population.individuals[i].betas[rand.nextInt(4)] +  rand.nextInt(5);
       }
     }
 
