@@ -75,8 +75,5 @@ public class PSOimplementation {
 
 	}
 
-	public static void main(String[] args) {
-		PSOimplementation p = new PSOimplementation();
-	}
 
 }
