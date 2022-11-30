@@ -55,7 +55,7 @@ public class MLR extends Agent {
         System.out.println("Welcome to multiple linear regression");
         break;
       case 2:
-        System.out.printf("%.2f + %.2f beta1 + %.2f beta2  (R^2 = %.2f)\n",
+        System.out.printf("y= %.2f beta 0 + (%.2f beta1)*x1 + (%.2f beta2)*x2  (R^2 = %.2f)\n",
                       regression.beta(0), regression.beta(1), regression.beta(2), regression.R2());
 
         break;
