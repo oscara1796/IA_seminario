@@ -58,7 +58,7 @@ public class PSOimplementation {
 		}
 		//Print the best solution
 		print((best));
-		System.out.println(PSO.evaluateFitness(best));
+		System.out.println("Fitness: " +PSO.evaluateFitness(best));
 		System.out.println("iterations " + numIter);
 	}
 
@@ -68,7 +68,7 @@ public class PSOimplementation {
 	 * @param a The given 1-D array
 	 */
 	public void print (double[] a) {
-		System.out.print("< ");
+		System.out.print("< [B0,B1]");
 		for (int i=0; i<a.length; i++) {
 			System.out.print(a[i]  + " ");
 		}
