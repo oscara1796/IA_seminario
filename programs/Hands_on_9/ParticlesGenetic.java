@@ -26,7 +26,7 @@ import jade.core.behaviours.OneShotBehaviour;
  */
 public class ParticlesGenetic extends Agent {
 
-  public Genetic genetic;
+  
 
 
   protected void setup()   {
