@@ -59,6 +59,7 @@ public class PSOimplementation {
 		//Print the best solution
 		print((best));
 		System.out.println(PSO.evaluateFitness(best));
+		System.out.println("iterations " + numIter);
 	}
 
 
