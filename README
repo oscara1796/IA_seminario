@@ -13,44 +13,99 @@ Oscar Abraham Carrillo
 Hands_on_4
 =======
 DataSet “Advertising”
+
+Linux:
+
 javac -cp lib/jade.jar:lib/poi-bin-5.2.3/poi-5.2.3.jar -d classes/ programs/Hands_on_4/SLR.java
 
 java -cp lib/jade.jar:lib/poi-bin-5.2.3/poi-5.2.3.jar:lib/poi-bin-5.2.3/lib/commons-io-2.11.0.jar:lib/poi-bin-5.2.3/poi-ooxml-5.2.3.jar:c:lib/poi-bin-5.2.3/lib/log4j-api-2.18.0.jar:classes/  jade.Boot  -agents ping1:examples.slr.SLR
 
+windows:
+
+javac -cp lib/jade.jar;lib/poi-bin-5.2.3/poi-5.2.3.jar -d classes/ programs/Hands_on_4/SLR.java
+
+java -cp lib/jade.jar;lib/poi-bin-5.2.3/poi-5.2.3.jar;lib/poi-bin-5.2.3/lib/commons-io-2.11.0.jar;lib/poi-bin-5.2.3/poi-ooxml-5.2.3.jar;c;lib/poi-bin-5.2.3/lib/log4j-api-2.18.0.jar;classes/  jade.Boot  -agents ping1:examples.slr.SLR  -host localhost -port 12344
+
 Hands_on_5
 =======
 DataSet “Advertising”
+
+Linux:
+
 javac -cp lib/jade.jar:lib/Jama-1.0.3.jar -d classes/ programs/Hands_on_5/MLR.java 
 
 java -cp lib/jade.jar:lib/Jama-1.0.3.jar:classes/ jade.Boot -agents ping1:examples.mlr.MLR 
 
+windows:
+
+javac -cp lib/jade.jar;lib/Jama-1.0.3.jar -d classes/ programs/Hands_on_5/MLR.java 
+
+
+java -cp lib/jade.jar;lib/Jama-1.0.3.jar;classes/ jade.Boot -agents ping1:examples.mlr.MLR -host localhost -port 12344
 
 Hands_on_6
 =======
 DataSet “Advertising”
+
+Linux:
+
 javac -cp lib/jade.jar  -d classes/ programs/Hands_on_6/*.java
 
-java -cp lib/jade.jar:classes/ jade.Boot -agents ping1:examples.gradient.GradientD;
+java -cp lib/jade.jar:classes/ jade.Boot -agents ping1:examples.gradient.GradientD
+
+windows:
+
+javac -cp lib/jade.jar  -d classes/ programs/Hands_on_6/*.java
+
+java -cp lib/jade.jar;classes/ jade.Boot -agents ping1:examples.gradient.GradientD  -host localhost -port 12344
 
 
 Hands_on_7
 =======
 Benetton’s Data Set
+
+Linux:
+
 javac -cp lib/jade.jar  -d classes/ programs/Hands_on_7/*.java
 
-java -cp lib/jade.jar:classes/ jade.Boot -agents ping1:examples.genetic.SLRGenetic;
+java -cp lib/jade.jar:classes/ jade.Boot -agents ping1:examples.genetic.SLRGenetic
+
+windows:
+
+javac -cp lib/jade.jar  -d classes/ programs/Hands_on_7/*.java
+
+java -cp lib/jade.jar;classes/ jade.Boot -agents ping1:examples.genetic.SLRGenetic -host localhost -port 12344
 
 Hands_on_8
 =======
 Benetton’s Data Set
+
+Linux:
+
 javac -cp lib/jade.jar  -d classes/ programs/Hands_on_8/*.java
 
-java -cp lib/jade.jar:classes/ jade.Boot -agents ping1:examples.genetic.NumbersGenetic;
+java -cp lib/jade.jar:classes/ jade.Boot -agents ping1:examples.genetic.NumbersGenetic
+
+windows:
+
+javac -cp lib/jade.jar  -d classes/ programs/Hands_on_8/*.java
+
+java -cp lib/jade.jar;classes/ jade.Boot -agents ping1:examples.genetic.NumbersGenetic -host localhost -port 12344
 
 
 Hands_on_9
 =======
 Benetton’s Data Set
+
+Linux:
+
 javac -cp lib/jade.jar  -d classes/ programs/Hands_on_9/*.java
 
-java -cp lib/jade.jar:classes/ jade.Boot -agents ping1:examples.particles.ParticlesGenetic;
+java -cp lib/jade.jar:classes/ jade.Boot -agents ping1:examples.particles.ParticlesGenetic
+
+windows:
+
+javac -cp lib/jade.jar  -d classes/ programs/Hands_on_9/*.java
+
+java -cp lib/jade.jar;classes/ jade.Boot -agents ping1:examples.particles.ParticlesGenetic -host localhost -port 12344
+
