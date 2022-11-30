@@ -66,7 +66,7 @@ public class GradientD extends Agent {
         System.out.println("Would you like to go again [1] yes | other value nope");
         int ans2  = sc2.nextInt();
         if (ans2 == 1)
-          step = 1;
+          step = 0;
         break;
       }
       step++;
@@ -113,9 +113,7 @@ public class GradientD extends Agent {
             previousStep = mse();
         }
 
-        for (int i = 0; i < previousStep.length ; i++ ) {
-          System.out.println(previousStep[0]+", "+previousStep[1]+", "+previousStep[2]);
-        }
+          System.out.println("B0 "+previousStep[0]+", B1 "+previousStep[1]+", MSE: "+previousStep[2]);
       }
 
      /**
