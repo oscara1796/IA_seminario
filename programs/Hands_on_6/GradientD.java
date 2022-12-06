@@ -22,7 +22,6 @@ import jade.core.behaviours.OneShotBehaviour;
  * "dummy" operations. The second operation in particular involves adding a
  * <code>OneShotBehaviour</code>. When the generic behaviour completes the
  * agent terminates.
- * @author Giovanni Caire - TILAB
  */
 public class GradientD extends Agent {
 
