@@ -19,15 +19,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.Cell;
 
-/**
- * This example shows the basic usage of JADE behaviours.<br>
- * More in details this agent executes a <code>CyclicBehaviour</code> that shows
- * a printout at each round and a generic behaviour that performs four successive
- * "dummy" operations. The second operation in particular involves adding a
- * <code>OneShotBehaviour</code>. When the generic behaviour completes the
- * agent terminates.
- * @author Giovanni Caire - TILAB
- */
+
 public class SLR extends Agent {
   // double data_set_x [][];
   // double data_set_y [];
